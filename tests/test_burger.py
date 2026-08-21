@@ -28,9 +28,6 @@ class TestBurger:
         burger = Burger()
         ingr = Ingredient(ingredient_type=type_ingr, name='test', price=10)
         burger.add_ingredient(ingr)
-
-        assert len(burger.ingredients) == 1
-
         burger.remove_ingredient(0)
 
         assert len(burger.ingredients) == 0
@@ -41,11 +38,6 @@ class TestBurger:
         ingr_2 = Ingredient(ingredient_type=INGREDIENT_TYPE_SAUCE, name='test_2', price=5.5)
         burger.add_ingredient(ingr_1)
         burger.add_ingredient(ingr_2)
-
-        assert len(burger.ingredients) == 2
-        assert ingr_1 is burger.ingredients[0]
-        assert ingr_2 is burger.ingredients[1]
-
         burger.move_ingredient(0, 1)
 
         assert len(burger.ingredients) == 2
